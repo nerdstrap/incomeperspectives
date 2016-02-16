@@ -10,13 +10,13 @@ var port = process.env.PORT || 3000;
 
 /* express */
 var app = express();
-app.use(favicon(__dirname + '/assets/img/favicon.ico'));
+app.use(favicon(__dirname + '/app/assets/img/favicon.ico'));
 app.use(express.static(__dirname + '/app'));
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
-app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/dist', express.static(__dirname + '/dist'));
-app.use(morgan('dev'));
+//app.use('/node_modules', express.static(__dirname + '/node_modules'));
+//app.use('/bower_components', express.static(__dirname + '/bower_components'));
+//app.use('/assets', express.static(__dirname + '/assets'));
+//app.use('/dist', express.static(__dirname + '/dist'));
+app.use(morgan('prod'));
 app.use(bodyParser.urlencoded({'extended': 'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
