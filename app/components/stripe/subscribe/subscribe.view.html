@@ -1,0 +1,96 @@
+<div data-ng-controller="SubscribeController as subscribeController">
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="pull-left">
+				<h2>{{subscribeController.view.title}}</h2>
+			</div>
+			<div class="breadcrumb pull-right">
+				<a ui-sref="{{subscribeController.view.parentSref}}">{{subscribeController.view.parentTitle}}</a>&nbsp;/&nbsp;<span class="color-green">{{subscribeController.view.title}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container content">
+		<h1>Subscription Plans</h1>
+
+		<div class="row" ng-show="!subscribeController.status.newCardVisible">
+			<div class="col-xs-6">
+				<div class="panel panel-success">
+					<div class="panel-heading">Individuals $39.99/month</div>
+					<div class="panel-body">
+						<p ng-show="subscribeController.customer.subscriptionId">
+							You are currently subscribed with card ending in {{subscribeController.customer.last4}} </p>
+						<button class="btn btn-success" type="button" data-ng-click="subscribeController.subscribe()" ng-show="!subscribeController.status.showUnsubscribe" tabindex="0">Subscribe</button>
+						<button class="btn btn-danger" type="button" data-ng-click="subscribeController.unsubscribe()" ng-show="subscribeController.status.showUnsubscribe" ng-disabled="subscribeController.status.unsubscribeDisabled" tabindex="-1">Unsubscribe</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Free</div>
+					<div class="panel-body">
+						<p>demo worksheets and value proposition</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-show="subscribeController.status.newCardVisible">
+			<div class="col-xs-6">
+				<div class="panel panel-success">
+					<div class="panel-heading">New Credit Card</div>
+					<div class="panel-body">
+						<form name="subscribeController.newCardFrm" novalidate>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group" bs-has>
+										<label for="number-input">Number</label>
+										<input id="number-input" type="text" size="20" name="number" data-stripe="number" ng-model="subscribeController.newCard.number" class="form-control" focus-on="firstOpened" required tabindex="0"/>
+										<span class="has-error" ng-show="subscribeController.newCardFrm.number.$dirty && subscribeController.newCardFrm.number.$invalid">
+											<span ng-show="subscribeController.newCardFrm.number.$error.required">Card Number is required.</span>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-2">
+									<div class="form-group" bs-has>
+										<label for="cvc-input">CVC</label>
+										<input id="cvc-input" type="text" size="4" name="cvc" data-stripe="cvc" ng-model="subscribeController.newCard.cvc" class="form-control" required tabindex="0"/>
+										<span class="has-error" ng-show="subscribeController.newCardFrm.cvc.$dirty && subscribeController.newCardFrm.cvc.$invalid">
+											<span ng-show="subscribeController.newCardFrm.cvc.$error.required">CVC is required.</span>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-2">
+									<div class="form-group" bs-has>
+										<label for="month-input">Month</label>
+										<input id="month-input" type="text" size="2" name="month" data-stripe="exp-month" ng-model="subscribeController.newCard.month" class="form-control" required tabindex="0"/>
+										<span class="has-error" ng-show="subscribeController.newCardFrm.month.$dirty && subscribeController.newCardFrm.month.$invalid">
+											<span ng-show="subscribeController.newCardFrm.month.$error.required">Month is required.</span>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-2">
+									<div class="form-group" bs-has>
+										<label for="year-input">Year</label>
+										<input id="year-input" type="text" size="2" name="year" data-stripe="exp-year" ng-model="subscribeController.newCard.year" class="form-control" required tabindex="0"/>
+										<span class="has-error" ng-show="subscribeController.newCardFrm.year.$dirty && subscribeController.newCardFrm.year.$invalid">
+											<span ng-show="subscribeController.newCardFrm.year.$error.required">Year is required.</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<button class="btn btn-default" type="button" data-ng-click="subscribeController.cancelAddNewCard()" tabindex="-1">Cancel</button>
+									<div class="pull-right">
+										<button class="btn btn-primary" type="button" data-ng-click="subscribeController.addNewCard()" ng-disabled="subscribeController.status.addNewCardDisabled" tabindex="0">Save Credit Card</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

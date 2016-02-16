@@ -1,0 +1,45 @@
+<div data-ng-controller="ContactUsController as contactUsController">
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="pull-left">
+				<h2>{{contactUsController.view.title}}</h2>
+			</div>
+			<div class="breadcrumb pull-right">
+				<a ui-sref="{{contactUsController.view.parentSref}}">{{contactUsController.view.parentTitle}}</a>&nbsp;/&nbsp;<span class="color-green">{{contactUsController.view.title}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container content">
+		<form class="frm-u" name="contactUsController.contactFrm" novalidate>
+			<header>Please enter your email address and message to contact us.</header>
+			<fieldset>
+				<div class="form-group" bs-has>
+					<label for="email-input">Email</label>
+
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+						<input id="email-input" type="email" name="email" ng-model="contactUsController.message.email" class="form-control" required tabindex="0"/>
+					</div>
+					<span class="has-error" ng-show="contactUsController.contactFrm.email.$dirty && contactUsController.contactFrm.email.$invalid">
+						<span ng-show="contactUsController.contactFrm.email.$error.required">Email is required.</span>
+					</span>
+				</div>
+				<div class="form-group" bs-has>
+					<label for="feedback-input">Message</label>
+					<textarea id="feedback-input" rows="8" name="feedback" ng-model="contactUsController.message.feedback" class="form-control" required tabindex="0"></textarea>
+					<span class="has-error" ng-show="contactUsController.contactFrm.feedback.$dirty && contactUsController.contactFrm.feedback.$invalid">
+						<span ng-show="contactUsController.contactFrm.feedback.$error.required">Message is required.</span>
+					</span>
+				</div>
+			</fieldset>
+			<footer>
+				<input class="btn-u" type="submit" data-ng-click="contactUsController.sendMessage(contact.message)" value="Send" tabindex="0"/>
+
+				<div ng-repeat="error in contactUsController.errors">
+					<div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+				</div>
+			</footer>
+		</form>
+	</div>
+</div>

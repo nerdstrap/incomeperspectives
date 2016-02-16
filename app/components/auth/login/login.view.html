@@ -1,0 +1,72 @@
+<div data-ng-controller="LoginController as loginController">
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="pull-left">
+				<h2>{{loginController.view.title}}</h2>
+			</div>
+			<div class="breadcrumb pull-right">
+				<a ui-sref="{{loginController.view.parentSref}}">{{loginController.view.parentTitle}}</a>&nbsp;/&nbsp;<span class="color-green">{{loginController.view.title}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container content">
+		<div class="row">
+			<div class="col-xs-8">
+				<form class="frm-u" name="loginController.loginFrm" novalidate>
+					<header>Login to your account</header>
+					<fieldset>
+						<div class="form-group" bs-has>
+							<label for="email-input">E-mail</label>
+
+							<div class="input-group">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+								<input id="email-input" type="text" name="email" ng-model="loginController.user.email" class="form-control" focus-on="firstOpened" required tabindex="0"/>
+							</div>
+							<span class="has-error" ng-show="loginController.loginFrm.email.$dirty && loginController.loginFrm.email.$invalid">
+								<span ng-show="loginController.loginFrm.email.$error.required">E-mail is required.</span>
+							</span>
+						</div>
+
+						<div class="form-group" bs-has>
+							<label for="password-input">Password</label>
+
+							<div class="input-group">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+								<input id="password-input" type="password" name="password" ng-model="loginController.user.password" class="form-control" required tabindex="0"/>
+							</div>
+							<span class="has-error" ng-show="loginController.loginFrm.password.$dirty && loginController.loginFrm.password.$invalid">
+								<span ng-show="loginController.loginFrm.password.$error.required">Password is required.</span>
+							</span>
+						</div>
+					</fieldset>
+					<footer>
+						<input class="btn-u" type="submit" data-ng-click="loginController.login(loginController.user)" value="Login" tabindex="0"/>
+						<div ng-repeat="error in loginController.errors">
+							<div class="alert alert-danger animated fadeIn">{{error.message}}</div>
+						</div>
+						<hr>
+						<h4>Forget your Password?</h4>
+
+						<p>no worries,
+							<a class="color-green" ui-sref='auth.forgotPassword'>click here</a> to reset your password.
+						</p>
+						<hr>
+						<h4>Not a member of Income Perspectives?</h4>
+
+						<p>simply <a class="green" ui-sref='auth.register'>click here</a> to subscribe.</p>
+					</footer>
+				</form>
+			</div>
+			<div class="col-xs-4">
+				<ul class="list-unstyled">
+					<li ng-repeat="(key, val) in socialButtons" class="social_icon social_icon_{{key}}">
+						<a target="_self" ng-href="/api/auth/{{key}}" class="button">
+							<span class="text-capitalize">Login With {{key}}</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

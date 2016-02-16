@@ -1,0 +1,24 @@
+{
+	"name": "incomeperspectives",
+	"dependencies": {
+		"jquery": "latest",
+		"lodash": "latest",
+		"moment": "latest",
+		"highcharts": "latest",
+		"filesaver": "latest",
+		"font-awesome": "latest",
+		"simple-line-icons": "latest",
+		"fancyBox": "latest",
+		"owl-carousel2": "latest",
+		"angular": "latest",
+		"angular-jwt": "latest",
+		"angular-resource": "latest",
+		"angular-cookies": "latest",
+		"angular-route": "latest",
+		"bootstrap": "latest",
+		"angular-bootstrap": "latest",
+		"angular-ui-router": "#master",
+		"angular-ui-select": "latest",
+		"angular-sanitize": "latest"
+	}
+}

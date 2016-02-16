@@ -1,0 +1,58 @@
+<div ng-controller="HeaderController as headerController">
+	<div class="header header-classic-white header-sticky">
+		<div class="navbar mega-menu" role="navigation">
+			<div class="container">
+				<div class="menu-container">
+					<button type="button" class="navbar-toggle collapsed" ng-click="headerController.status.isCollapsed = !headerController.status.isCollapsed">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<div class="navbar-brand">
+						<a class="" ui-sref="home.home" ui-sref-active="active">Income Perspectives</a>
+					</div>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-responsive-collapse" ng-class="!headerController.status.isCollapsed && 'in'">
+					<div class="menu-container">
+						<ul class="nav navbar-nav navbar-right">
+							<li ui-sref-active="active">
+								<a ui-sref='home.home'>Home</a>
+							</li>
+							<li>
+								<a ui-sref='incomePerspectives.abid'>Index Annuity</a>
+							</li>
+							<li>
+								<a ui-sref='incomePerspectives.ibid'>Index UL</a>
+							</li>
+							<li>
+								<a ui-sref='stripe.subscribe'>Subscriptions</a>
+							</li>
+							<li>
+								<a ui-sref='home.contactUs'>Contact Us</a>
+							</li>
+							<li ng-show="headerController.status.loginVisible">
+								<a ui-sref='auth.register'>Join</a>
+							</li>
+							<li ng-show="headerController.status.loginVisible">
+								<a ui-sref='auth.login' class="">Login</a>
+							</li>
+							<li class="dropdown" uib-dropdown ng-show="headerController.status.logoutVisible">
+								<a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+									<span>{{headerController.user.name}}</span><b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#" class="" ng-click="headerController.logout()">Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
