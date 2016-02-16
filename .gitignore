@@ -62,7 +62,6 @@ bower_components
 data/
 tests/results/**
 /public/build/
-/packages/**/**/public/assets/lib
 
 # --------------------
 # vim Files

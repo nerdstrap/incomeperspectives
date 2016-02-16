@@ -5,6 +5,7 @@ var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify-css');
 var merge = require('merge-stream');
+var mainBowerFiles = require('main-bower-files');
 
 gulp.task('styles', function () {
 	return sass('app/components/**/*.scss', {
@@ -23,4 +24,14 @@ gulp.task('build-sass', function () {
 		.pipe(gulp.dest('assets/css'));
 
 	return mergedStream;
+});
+
+gulp.task('bower:install', function () {
+	return gulp.src(mainBowerFiles(), {
+			bowerDirectory: './bower_components',
+			bowerrc: './.bowerrc',
+			bowerJson: './bower.json'
+
+		})
+		.pipe(gulp.dest('./assets/lib'));
 });

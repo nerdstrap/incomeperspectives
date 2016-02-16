@@ -29,7 +29,8 @@
 		"gulp-ruby-sass": "latest",
 		"gulp-concat": "latest",
 		"gulp-minify-css": "latest",
-		"merge-stream": "latest"
+		"merge-stream": "latest",
+		"main-bower-files": "latest"
 	},
 	"scripts": {},
 	"main": "./server"
