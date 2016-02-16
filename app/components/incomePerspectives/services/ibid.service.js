@@ -8,19 +8,19 @@ function IbidFactory($http) {
 	var ibidFactory = {};
 
 	ibidFactory.getBaseline = function (worksheet) {
-		return $http.get(urlBase + '/baseline', {
+		return $http.get(_baseUrl + '/baseline', {
 			params: worksheet
 		});
 	};
 
 	ibidFactory.getBreakEvenAnalysis = function (worksheet) {
-		return $http.get(urlBase + '/breakEvenAnalysis', {
+		return $http.get(_baseUrl + '/breakEvenAnalysis', {
 			params: worksheet
 		});
 	};
 
 	ibidFactory.getPdf = function (worksheet) {
-		return $http.get(urlBase + '/pdf', {
+		return $http.get(_baseUrl + '/pdf', {
 			params: worksheet,
 			responseType: 'arraybuffer'
 		});

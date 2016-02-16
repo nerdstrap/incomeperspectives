@@ -41,7 +41,7 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 	var vm = this;
 
 	vm.view = {
-		title: 'Subscriptions',
+		title: 'Contact Us',
 		parentSref: 'home.home',
 		parentTitle: 'Home'
 	};
@@ -55,14 +55,14 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 	vm.customer = {};
 
 	function getSettings() {
-		StripeFactory.getSettings()
-			.success(function (settings) {
-				vm.settings = angular.copy(settings);
-			})
-			.error(function (error) {
-				console.log(error);
-				vm.status.response = 'Unable to get stripe settings.';
-			});
+		//StripeFactory.getSettings()
+		//	.success(function (settings) {
+		//		vm.settings = angular.copy(settings);
+		//	})
+		//	.error(function (error) {
+		//		console.log(error);
+		vm.status.response = 'Unable to get stripe settings.';
+		//});
 	}
 
 	function getCustomer() {
