@@ -3,6 +3,10 @@
 function HomeController($scope) {
 	var vm = this;
 
+	function init() {
+		console.log('home init');
+	}
+
 	vm.init = init;
 
 	vm.init();
