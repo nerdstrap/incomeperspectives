@@ -4,6 +4,10 @@ function StripeFactory($http) {
 	var _baseUrl = 'https://incomeperspectivesapi.herokuapp.com/api/stripe';
 	var stripeFactory = {};
 
+	stripeFactory.getSettings = function () {
+		return $http.get(_baseUrl + '/settings');
+	};
+
 	stripeFactory.getPlans = function () {
 		return $http.get(_baseUrl + '/plans');
 	};

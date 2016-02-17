@@ -16,9 +16,9 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 		}
 	}
 
-	function installStripeClient(publicKey, callback) {
+	function installStripeClient(publishableKey, callback) {
 		loadScript('https://js.stripe.com/v2', function () {
-			Stripe.setPublishableKey(publicKey);
+			Stripe.setPublishableKey(publishableKey);
 			callback();
 		});
 	}
@@ -55,14 +55,14 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 	vm.customer = {};
 
 	function getSettings() {
-		//StripeFactory.getSettings()
-		//	.success(function (settings) {
-		//		vm.settings = angular.copy(settings);
-		//	})
-		//	.error(function (error) {
-		//		console.log(error);
-		vm.status.response = 'Unable to get stripe settings.';
-		//});
+		StripeFactory.getSettings()
+			.success(function (settings) {
+				vm.settings = angular.copy(settings);
+			})
+			.error(function (error) {
+				console.log(error);
+				vm.status.response = 'Unable to get stripe settings.';
+			});
 	}
 
 	function getCustomer() {
@@ -88,7 +88,7 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 		vm.newCardFrm.$setUntouched();
 		vm.newCardFrm.$setPristine();
 		if (!stripeLoaded) {
-			installStripeClient(vm.settings.publicKey, function () {
+			installStripeClient(vm.settings.publishableKey, function () {
 				vm.status.newCardVisible = true;
 				vm.status.addNewCardDisabled = false;
 				$scope.$apply();
