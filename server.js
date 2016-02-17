@@ -23,6 +23,9 @@ app.get('/getModules', function (req, res) {
 	return res.json(modules);
 });
 
+var abidRoutes = require('./server/middleware/abid/abidRoutes')(app);
+var ibidRoutes = require('./server/middleware/ibid/ibidRoutes')(app);
+
 app.all('*', function (req, res, next) {
 	res.sendFile('index.html', {root: __dirname + '/app'});
 });

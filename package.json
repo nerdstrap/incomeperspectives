@@ -22,7 +22,9 @@
 		"express": "latest",
 		"body-parser": "latest",
 		"morgan": "latest",
-		"serve-favicon": "latest"
+		"serve-favicon": "latest",
+		"swig": "latest",
+		"lodash": "latest"
 	},
 	"devDependencies": {
 		"gulp": "latest",

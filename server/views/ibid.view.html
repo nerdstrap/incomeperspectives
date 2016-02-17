@@ -1,0 +1,115 @@
+{% extends 'layouts/default.html' %}
+{% block content %}
+<div class="report">
+
+	<!-- header -->
+	<div class="header">
+		<div class="row">
+			<div class="col-sm-6"><h3>dcMax - Index UL Comparison</h3></div>
+			<div class="col-sm-6"><h3 id="timestamp-label" class="pull-right"></h3></div>
+		</div>
+	</div>
+	<!-- header -->
+
+	<!-- summary -->
+	<div class="summary">
+		<div class="row">
+			<div class="col-sm-2"><span class="pull-right">Client Name:</span></div>
+			<div class="col-sm-2"><span id="client-name-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Current Age:</span></div>
+			<div class="col-sm-2"><span id="current-age-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Annual Contribution:</span></div>
+			<div class="col-sm-2"><span id="annual-deposit-label" class="font-bold"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"><span class="pull-right">Insurance Company:</span></div>
+			<div class="col-sm-2"><span id="insurance-company-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Retirement Age:</span></div>
+			<div class="col-sm-2"><span id="retirement-age-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Increase:</span></div>
+			<div class="col-sm-2"><span id="growth-rate-label" class="font-bold"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"><span class="pull-right">Index UL Income:</span></div>
+			<div class="col-sm-2"><span id="insurance-product-income-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right"># Retirement Years:</span></div>
+			<div class="col-sm-2"><span id="number-of-periods-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Net ROR:</span></div>
+			<div class="col-sm-2"><span id="net-rate-of-return-label" class="font-bold"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">&nbsp;</div>
+			<div class="col-sm-2">&nbsp;</div>
+			<div class="col-sm-2"><span class="pull-right">Payoff Age:</span></div>
+			<div class="col-sm-2"><span id="payoff-age-label" class="font-bold"></span></div>
+			<div class="col-sm-2"><span class="pull-right">Inflation Rate:</span></div>
+			<div class="col-sm-2"><span id="inflation-rate-label" class="font-bold"></span></div>
+		</div>
+	</div>
+	<!-- summary -->
+
+	<!-- cumulative income comparison -->
+	<div class="summary text-center">
+		<div class="row">
+			<div class="col-sm-12"><h3>First Year</h3></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">Income from Annuity</div>
+			<div class="col-sm-4">&nbsp;</div>
+			<div class="col-sm-4">Income from 4% Rule</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4"><h3 id="cumulative-annuity-income-0-label" class="font-bold"></h3></div>
+			<div class="col-sm-4"><h3 class="font-bold">VS.</h3></div>
+			<div class="col-sm-4"><h3 id="cumulative-investment-income-0-label" class="font-bold"></h3></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4"><span class="gross-rate-of-return-label"></span></div>
+			<div class="col-sm-4">&nbsp;</div>
+			<div class="col-sm-4"><span class="gross-rate-of-return-label"></span></div>
+		</div>
+	</div>
+	<!-- cumulative income comparison -->
+
+	<!-- cumulative income chart -->
+	<div class="chart-container">
+		<div id="break-even-analysis-chart"></div>
+	</div>
+	<!-- cumulative income chart -->
+
+	<!-- breakeven analysis -->
+	<div class="summary text-center">
+		<div class="row">
+			<div class="col-sm-12"><h2>Breakeven Age</h2></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12"><h2 id="breakeven-age-label" class="font-bold"></h2></div>
+		</div>
+	</div>
+	<!-- breakeven analysis -->
+
+	<!-- go-go slow-go no-go chart -->
+	<div class="schedule">
+		<div class="row">
+			<div id="go-go-schedule" class="col-sm-4"></div>
+			<div id="slow-go-schedule" class="col-sm-4"></div>
+			<div id="no-go-schedule" class="col-sm-4"></div>
+		</div>
+	</div>
+	<!-- go-go slow-go no-go chart -->
+
+	<!-- periodic analysis chart -->
+	<div class="chart-container">
+		<div id="cumulative-payout-chart"></div>
+	</div>
+	<!-- periodic analysis chart -->
+
+</div>
+
+{% endblock %}
+
+{% block _scripts %}
+{% parent %}
+<script type="text/javascript" src="/assets/js/ibidReport.js"></script>
+{% include 'includes/_ibid.init.html' %}
+{% endblock %}
