@@ -3,7 +3,8 @@
 function AuthFactory($rootScope, $http, $location, $stateParams, $cookies, $q, $timeout, AuthEvents) {
 
 	var self;
-	var _baseUrl = 'https://incomeperspectivesapi.herokuapp.com';
+	//var _baseUrl = 'https://incomeperspectivesapi.herokuapp.com';
+	var _baseUrl = 'http://localhost:1337';
 	var defaultUrl = '/';
 	var cookieName = 'token';
 
@@ -69,7 +70,7 @@ function AuthFactory($rootScope, $http, $location, $stateParams, $cookies, $q, $
 					}
 				},
 				function (error) {
-					console.log(error);
+					console.info(error);
 				}
 			);
 	}
