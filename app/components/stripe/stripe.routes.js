@@ -3,12 +3,7 @@
 function StripeRoutes($stateProvider) {
 
 	$stateProvider
-		.state('stripe', {
-			url: '/stripe',
-			abstract: true,
-			templateUrl: '/components/shared/layout.view.html'
-		})
-		.state('stripe.subscribe', {
+		.state('subscribe', {
 			url: '/subscribe',
 			templateUrl: '/components/stripe/subscribe/subscribe.view.html'
 		})

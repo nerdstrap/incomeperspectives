@@ -46,10 +46,8 @@ function $appState($stateProvider, $viewPathProvider) {
 
 function UrlRouteProvider($appStateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.when('/', '/home/');
-
 	// For unmatched routes:
-	$urlRouterProvider.otherwise('/home/');
+	$urlRouterProvider.otherwise('/');
 
 }
 

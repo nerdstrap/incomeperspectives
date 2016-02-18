@@ -24,7 +24,9 @@
 	<!--end: inject css-->
 </head>
 <body ng-cloak class="header-fixed header-fixed-space ng-cloak" ng-class="state">
+<div data-ng-include="'/components/shared/header/header.view.html'"></div>
 <div ui-view></div>
+<div data-ng-include="'/components/shared/footer/footer.view.html'"></div>
 <!--start: inject js-->
 <!--jquery-->
 <script src="/assets/lib/jquery/jquery.js"></script>

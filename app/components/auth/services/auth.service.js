@@ -3,8 +3,7 @@
 function AuthFactory($rootScope, $http, $location, $stateParams, $cookies, $q, $timeout, AuthEvents) {
 
 	var self;
-	//var _baseUrl = 'https://incomeperspectivesapi.herokuapp.com';
-	var _baseUrl = 'http://localhost:1337';
+	var _baseUrl = 'https://incomeperspectivesapi.herokuapp.com';
 	var defaultUrl = '/';
 	var cookieName = 'token';
 

@@ -9,12 +9,7 @@ function AuthRoutes($appStateProvider, $httpProvider, jwtInterceptorProvider) {
 	$httpProvider.interceptors.push('jwtInterceptor');
 
 	$appStateProvider
-		.state('auth', {
-			url: '/auth',
-			abstract: true,
-			templateUrl: '/components/shared/layout.view.html'
-		})
-		.state('auth.login', {
+		.state('login', {
 			url: '/login',
 			templateUrl: '/components/auth/login/login.view.html',
 			resolve: {
@@ -23,7 +18,7 @@ function AuthRoutes($appStateProvider, $httpProvider, jwtInterceptorProvider) {
 				}
 			}
 		})
-		.state('auth.register', {
+		.state('register', {
 			url: '/register',
 			templateUrl: '/components/auth/register/register.view.html',
 			resolve: {
@@ -32,7 +27,7 @@ function AuthRoutes($appStateProvider, $httpProvider, jwtInterceptorProvider) {
 				}
 			}
 		})
-		.state('auth.forgotPassword', {
+		.state('forgotPassword', {
 			url: '/forgotPassword',
 			templateUrl: '/components/auth/forgotPassword/forgotPassword.view.html',
 			resolve: {
@@ -41,7 +36,7 @@ function AuthRoutes($appStateProvider, $httpProvider, jwtInterceptorProvider) {
 				}
 			}
 		})
-		.state('auth.resetPassword', {
+		.state('resetPassword', {
 			url: '/resetPassword/:tokenId',
 			templateUrl: '/components/auth/resetPassword/resetPassword.view.html',
 			resolve: {

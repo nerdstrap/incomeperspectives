@@ -3,15 +3,11 @@
 function IncomePerspectivesRoutes($stateProvider) {
 
 	$stateProvider
-		.state('incomePerspectives', {
-			url: '/incomePerspectives',
-			templateUrl: '/components/shared/layout.view.html'
-		})
-		.state('incomePerspectives.abid', {
+		.state('abid', {
 			url: '/abid',
 			templateUrl: '/components/incomePerspectives/abid/abid.view.html'
 		})
-		.state('incomePerspectives.ibid', {
+		.state('ibid', {
 			url: '/ibid',
 			templateUrl: '/components/incomePerspectives/ibid/ibid.view.html'
 		});

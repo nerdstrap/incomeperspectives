@@ -4,23 +4,18 @@ function HomeRoutes($stateProvider) {
 
 	$stateProvider
 		.state('home', {
-			url: '/home',
-			abstract: true,
-			templateUrl: '/components/shared/layout.view.html'
-		})
-		.state('home.home', {
 			url: '/',
 			templateUrl: '/components/home/home.view.html'
 		})
-		.state('home.contactUs', {
+		.state('contactUs', {
 			url: '/contactUs',
 			templateUrl: '/components/home/contactUs/contactUs.view.html'
 		})
-		.state('home.privacyPolicy', {
+		.state('privacyPolicy', {
 			url: '/privacyPolicy',
 			templateUrl: '/components/home/privacyPolicy/privacyPolicy.view.html'
 		})
-		.state('home.termsAndConditions', {
+		.state('termsAndConditions', {
 			url: '/termsAndConditions',
 			templateUrl: '/components/home/termsAndConditions/termsAndConditions.view.html'
 		});
