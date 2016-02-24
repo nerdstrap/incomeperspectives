@@ -42,7 +42,7 @@ function SubscribeController($scope, $rootScope, StripeFactory, AuthFactory) {
 
 	vm.view = {
 		title: 'Contact Us',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

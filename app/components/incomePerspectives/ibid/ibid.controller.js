@@ -6,7 +6,7 @@ function IbidController($scope, $rootScope, focus, IbidFactory, ChartFactory, Au
 
 	vm.view = {
 		title: 'Index UL',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

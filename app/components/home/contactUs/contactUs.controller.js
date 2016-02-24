@@ -5,7 +5,7 @@ function ContactUsController($scope, $rootScope, $stateParams, focus) {
 
 	vm.view = {
 		title: 'Contact Us',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

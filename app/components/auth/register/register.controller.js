@@ -5,7 +5,7 @@ function RegisterController($scope, $rootScope, focus, AuthFactory) {
 
 	vm.view = {
 		title: 'Register',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

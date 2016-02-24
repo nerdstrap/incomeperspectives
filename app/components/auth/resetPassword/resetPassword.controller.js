@@ -5,7 +5,7 @@ function ResetPasswordController($scope, $rootScope, focus, AuthFactory) {
 
 	vm.view = {
 		title: 'Reset Password',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

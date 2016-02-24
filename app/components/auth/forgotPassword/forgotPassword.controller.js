@@ -5,7 +5,7 @@ function ForgotPasswordController($scope, $rootScope, focus, AuthFactory) {
 
 	vm.view = {
 		title: 'Forgot Password',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

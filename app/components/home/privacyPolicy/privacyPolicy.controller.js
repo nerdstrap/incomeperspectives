@@ -5,7 +5,7 @@ function PrivacyPolicyController($scope, $rootScope, $stateParams, focus, AuthFa
 
 	vm.view = {
 		title: 'Privacy Policy',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 }

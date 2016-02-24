@@ -5,7 +5,7 @@ function TermsAndConditionsController($scope, $rootScope, $stateParams, focus, A
 
 	vm.view = {
 		title: 'Terms and Conditions',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 }

@@ -5,7 +5,7 @@ function LoginController($scope, $rootScope, focus, AuthFactory) {
 
 	vm.view = {
 		title: 'Login',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 

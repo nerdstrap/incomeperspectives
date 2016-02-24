@@ -6,7 +6,7 @@ function AbidController($scope, $rootScope, focus, AbidFactory, ChartFactory, Au
 
 	vm.view = {
 		title: 'Index Annuity',
-		parentSref: 'home.home',
+		parentSref: 'home',
 		parentTitle: 'Home'
 	};
 
