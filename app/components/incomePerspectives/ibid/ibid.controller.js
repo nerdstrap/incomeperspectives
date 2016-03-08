@@ -6,8 +6,8 @@ function IbidController($scope, $rootScope, focus, IbidFactory, ChartFactory, Au
 
 	vm.view = {
 		title: 'Index UL',
-		parentSref: 'home',
-		parentTitle: 'Home'
+		parentSref: 'ibidTraining',
+		parentTitle: 'Training'
 	};
 
 	vm.master = {

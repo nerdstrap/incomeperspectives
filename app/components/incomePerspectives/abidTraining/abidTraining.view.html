@@ -1,0 +1,29 @@
+<div data-ng-controller="AbidTrainingController as abidTrainingController">
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="pull-left">
+				<h2>{{abidTrainingController.view.title}}</h2>
+			</div>
+			<div class="breadcrumb pull-right">
+				<a ui-sref="{{abidTrainingController.view.parentSref}}">{{abidTrainingController.view.parentTitle}}</a>&nbsp;/&nbsp;<span class="color-green">{{abidTrainingController.view.title}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container content-md">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 class="title-v2">Annuity Based Income Design</h2>
+				<p></p>
+				<br>
+				<a ui-sref="abid" class="btn-u">Try It Out</a>
+			</div>
+			<div class="col-md-6">
+				<img class="img-responsive" src="/assets/img/sliders/2.jpg" alt="">
+				<br/>
+				<br/>
+				<br/><br/><br/>
+			</div>
+		</div>
+	</div>
+</div>
